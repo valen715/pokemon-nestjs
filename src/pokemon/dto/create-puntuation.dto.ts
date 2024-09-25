@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { IsInt, IsPositive, Max, Min } from 'class-validator';
+import { IsInt, IsNotEmpty, IsPositive, Max, Min } from 'class-validator';
 
-export class RatePokemonDto {
-  @IsInt()
+export class CreatePuntuationDto {
+  @IsNotEmpty()
   id: number;
 
   @IsInt()
   @IsPositive()
   @Min(1)
   @Max(5)
-  rating: number;
+  puntuation: number;
 }

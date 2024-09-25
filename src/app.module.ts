@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PokemonModule } from './pokemon/pokemon.module';
+import { Pokemon } from './pokemon/entities/pokemon.entity';
 
 @Module({
   imports: [
@@ -11,10 +12,10 @@ import { PokemonModule } from './pokemon/pokemon.module';
       type: 'postgres',
       host: 'localhost',
       port: 5432,
-      username: 'pokemon', 
-      password: 'pokemon', 
+      username: 'postgres', 
+      password: '12345', 
       database: 'pokemon', 
-      entities: [__dirname + '/**/*.entity{.ts,.js}'],
+      entities: [Pokemon],
       synchronize: false,
     }),
     PokemonModule

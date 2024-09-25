@@ -3,11 +3,11 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PokemonController } from './pokemon.controller';
 import { PokemonService } from './pokemon.service';
-import { Pokemons } from './entities/pokemon.entity';
+import { Pokemon } from './entities/pokemon.entity';
 import { HttpModule } from '@nestjs/axios';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Pokemons]),
+  imports: [TypeOrmModule.forFeature([Pokemon]),
     HttpModule],
   controllers: [PokemonController],
   providers: [PokemonService],
